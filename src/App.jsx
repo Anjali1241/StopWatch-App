@@ -48,7 +48,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>STOPWATCH</h1>
+      <h1 className='text-5xl font-bold underline'>STOPWATCH</h1>
       <h1>{formatTime(elapsedTime)}</h1>
       <button onClick={start} disabled={isRunning}>
         Start

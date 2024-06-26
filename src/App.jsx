@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const App = () => {
   const [startTime, setStartTime] = useState(null);
@@ -39,24 +39,45 @@ const App = () => {
     const minutes = Math.floor((time / (1000 * 60)) % 60);
     const hours = Math.floor((time / (1000 * 60 * 60)) % 24);
 
-    return `${hours.toString().padStart(2, '0')}:${minutes
+    return `${hours.toString().padStart(2, "0")}:${minutes
       .toString()
-      .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds
+      .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}:${milliseconds
       .toString()
-      .padStart(2, '0')}`;
+      .padStart(2, "0")}`;
   };
 
   return (
-    <div>
-      <h1 className='text-5xl font-bold underline'>STOPWATCH</h1>
-      <h1>{formatTime(elapsedTime)}</h1>
-      <button onClick={start} disabled={isRunning}>
-        Start
-      </button>
-      <button onClick={stop} disabled={!isRunning}>
-        Stop
-      </button>
-      <button onClick={reset}>Reset</button>
+    <div className="flex justify-center items-center h-screen bg-gradient-to-br from-gray-800 via-gray-600 to-blue-800">
+      <div className="bg-white p-10 rounded-lg shadow-lg w-96">
+        <h1 className="text-3xl font-extrabold text-center text-gray-800 mb-4">STOPWATCH</h1>
+        <h1 className="text-2xl font-mono text-center text-gray-800 mb-6">{formatTime(elapsedTime)}</h1>
+        <div className="flex justify-center gap-4">
+          <button 
+            onClick={start} 
+            disabled={isRunning} 
+            className={`px-6 py-3 rounded-md text-lg font-semibold transition-colors ${
+              isRunning ? 'bg-gray-500 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-300'
+            } text-white shadow-md`}
+          >
+            Start
+          </button>
+          <button 
+            onClick={stop} 
+            disabled={!isRunning} 
+            className={`px-6 py-3 rounded-md text-lg font-semibold transition-colors ${
+              !isRunning ? 'bg-gray-500 cursor-not-allowed' : 'bg-red-500 hover:bg-red-600 focus:ring-2 focus:ring-red-300'
+            } text-white shadow-md`}
+          >
+            Stop
+          </button>
+          <button 
+            onClick={reset} 
+            className="px-6 py-3 bg-yellow-500 text-lg font-semibold rounded-md hover:bg-yellow-600 focus:ring-2 focus:ring-yellow-300 text-white shadow-md transition-colors"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

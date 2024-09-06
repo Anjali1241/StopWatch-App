@@ -1,8 +1,11 @@
-# React + Vite
+Features:
+Start, stop, and reset functionality.
+Real-time display of elapsed time in hh:mm:ss:cs format.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Getting Started:
+To run the application locally:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Clone this repository.
+Navigate to the project directory.
+Install dependencies with npm install.
+Start the development server with npm start.

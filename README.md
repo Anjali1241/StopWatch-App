@@ -8,4 +8,4 @@ To run the application locally:
 Clone this repository.
 Navigate to the project directory.
 Install dependencies with npm install.
-Start the development server with npm start.
+Start the development server with npm run dev.
